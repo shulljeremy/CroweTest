@@ -1,0 +1,7 @@
+CroweTest/obj/
+CroweTest/bin/
+packages/
+SharedApi.Tests/bin/
+SharedApi/obj/
+SharedApi/bin/
+SharedApi.Tests/obj/
