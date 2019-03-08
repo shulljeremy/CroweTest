@@ -18,16 +18,23 @@ namespace CroweTest
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred while running the application:\n{ex.Message}");
+                Console.WriteLine($"An error occurred while initializing dependencies:\n{ex.Message}\n");
             }
 
             WaitToExit();
         }
 
-        private static void DoWork()
+        private static async void DoWork()
         {
-            var model = new Model { Text = "Hello World" };
-            _modelApi.ProcessModelAsync(model);
+            try
+            {
+                var model = new Model { Text = "Hello World" };
+                await _modelApi.ProcessModelAsync(model);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while doing the work:\n{ex.Message}\n");
+            }
         }
 
         private static void WaitToExit()
