@@ -26,15 +26,8 @@ namespace CroweTest
 
         private static async void DoWork()
         {
-            try
-            {
-                var model = new Model { Text = "Hello World" };
-                await _modelApi.ProcessModelAsync(model);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred while doing the work:\n{ex.Message}\n");
-            }
+            var model = new Model { Text = "Hello World" };
+            await _modelApi.ProcessModelAsync(model);
         }
 
         private static void WaitToExit()
